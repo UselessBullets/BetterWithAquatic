@@ -68,7 +68,7 @@ public class BetterWithAquatic implements GameStartEntrypoint, ModInitializer {
 			3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(ModItems.small_bulb.getDefaultStack(),
 				1f, 1, 1)});
 		MobInfoRegistry.register(EntityDrowned.class, "aquatic.drowned.name", "aquatic.drowned.desc",
-			3, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Item.cloth),
+			20, 20, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Item.cloth),
 				0.66f, 1, 2)});
 	}
 
