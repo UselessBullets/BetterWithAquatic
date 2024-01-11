@@ -17,23 +17,18 @@ public class EntityAnglerFish extends EntityBaseFish {
 		this.health = 5;
 		this.skinName = "angler_fish";
 	}
-
 	@Override
 	public String getEntityTexture() {
 		return "/assets/better_with_aquatic/entity/angler_fish.png";
 	}
-
 	@Override
 	public String getDefaultEntityTexture() {
 		return "/assets/better_with_aquatic/entity/angler_fish.png";
 	}
-
-
 	@Override
 	protected float getBlockPathWeight(int x, int y, int z) {
 		return 0.5f - this.world.getLightBrightness(x, y, z);
 	}
-
 	@Override
 	public boolean getCanSpawnHere() {
 		int k;
@@ -51,7 +46,6 @@ public class EntityAnglerFish extends EntityBaseFish {
 		}
 		return blockLight <= 4 && super.getCanSpawnHere();
 	}
-
 	@Override
 	protected Entity findPlayerToAttack() {
 		EntityPlayer entityplayer = this.world.getClosestPlayerToEntity(this, 16.0);
@@ -60,7 +54,6 @@ public class EntityAnglerFish extends EntityBaseFish {
 		}
 		return null;
 	}
-
 	@Override
 	public boolean hurt(Entity entity, int i, DamageType type) {
 		if (super.hurt(entity, i, type)) {
@@ -74,14 +67,13 @@ public class EntityAnglerFish extends EntityBaseFish {
 		}
 		return false;
 	}
-
+	@Override
 	protected void attackEntity(Entity entity, float distance) {
 		if (this.attackTime <= 0 && distance < 1.5f && entity.bb.maxY > this.bb.minY && entity.bb.minY < this.bb.maxY) {
 			this.attackTime = 20;
 			entity.hurt(this, 1, DamageType.COMBAT);
 		}
 	}
-
 	@Override
 	protected void dropFewItems() {
 		this.spawnAtLocation(new ItemStack(ModItems.small_bulb, 1, 0), 0.0f);

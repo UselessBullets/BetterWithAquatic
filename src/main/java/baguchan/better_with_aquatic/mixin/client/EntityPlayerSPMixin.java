@@ -10,6 +10,7 @@ import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -17,17 +18,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = EntityPlayerSP.class, remap = false)
 public abstract class EntityPlayerSPMixin extends EntityPlayer implements ISwiming {
-
-
 	@Shadow
 	protected Minecraft mc;
+	@Unique
 	private boolean pressedSprint = false;
-
 	public EntityPlayerSPMixin(World world) {
 		super(world);
 	}
-
-
 	@Shadow
 	private boolean isBlockTranslucent(int i, int j, int k) {
 		return false;

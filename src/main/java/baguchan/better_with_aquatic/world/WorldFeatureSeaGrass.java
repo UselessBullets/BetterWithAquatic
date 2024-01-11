@@ -8,12 +8,10 @@ import net.minecraft.core.world.generate.feature.WorldFeature;
 import java.util.Random;
 
 public class WorldFeatureSeaGrass extends WorldFeature {
-	private int blockId;
-
+	private final int blockId;
 	public WorldFeatureSeaGrass(int i) {
 		this.blockId = i;
 	}
-
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
 		int l = 0;

@@ -17,13 +17,10 @@ import java.util.List;
 
 @Mixin(value = Biome.class, remap = false)
 public class BiomeMixin {
-
 	@Shadow
 	protected List<SpawnListEntry> spawnableWaterCreatureList;
-
 	@Shadow
 	protected List<SpawnListEntry> spawnableMonsterList;
-
 	@Inject(method = "<init>", remap = false, at = @At("TAIL"))
 	private void addMobs(CallbackInfo ci) {
 		Biome biome = (Biome) (Object) this;

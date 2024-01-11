@@ -30,3 +30,10 @@ item.better_with_aquatic.spawnegg.fish.name=Fish
 item.better_with_aquatic.spawnegg.angler_fish.name=Angler Fish
 
 item.better_with_aquatic.small_bulb.name=Small Bulb
+
+aquatic.fish.name=Fish
+aquatic.fish.desc=A small fish, likes to swim. Can survive in salt and fresh water
+aquatic.fish.angler.name=Angler Fish
+aquatic.fish.angler.desc=A not so small fish, likes to swim, uses its bioluminescent bulb to lure in mobs and players.
+aquatic.drowned.name=Drowned
+aquatic.drowned.desc=A waterlogged zombie, has adapted to the water and learned to swim.

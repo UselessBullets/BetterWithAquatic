@@ -25,14 +25,20 @@
 		"afterGameStart": [
 			"baguchan.better_with_aquatic.BetterWithAquatic"
 		],
-		"onRecipesReady": [
-			"baguchan.better_with_aquatic.BetterWithAquatic"
+		"recipesReady": [
+			"baguchan.better_with_aquatic.crafting.ModCraftings"
+		],
+		"beforeClientStart": [
+			"baguchan.better_with_aquatic.BetterWithAquaticClient"
 		],
 		"afterClientStart": [
 			"baguchan.better_with_aquatic.BetterWithAquaticClient"
 		],
 		"terrain-api": [
 			"baguchan.better_with_aquatic.TerrainAPIPlugin"
+		],
+		"spawneggs": [
+			"baguchan.better_with_aquatic.compat.SpawnEggsPlugin"
 		]
   },
   "mixins": [

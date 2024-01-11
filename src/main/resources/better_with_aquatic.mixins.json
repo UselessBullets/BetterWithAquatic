@@ -8,7 +8,6 @@
     "EntityItemMixin",
     "EntityMixin",
     "EntityPlayerMixin",
-    "MinecraftMixin",
     "NetHandlerMixin",
     "NetServerHandlerMixin"
   ],

@@ -12,13 +12,10 @@ import org.spongepowered.asm.mixin.Shadow;
 public class NetServerHandlerMixin implements ISwimPacket {
 	@Shadow
 	private EntityPlayerMP playerEntity;
-
 	@Override
-	public void handleSwim(SwimPacket packet) {
+	public void betterWithAquatic$handleSwim(SwimPacket packet) {
 		if (playerEntity instanceof ISwiming) {
 			((ISwiming) playerEntity).setSwimming(packet.swim);
 		}
-
-
 	}
 }

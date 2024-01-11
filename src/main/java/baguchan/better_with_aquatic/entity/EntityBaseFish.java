@@ -27,33 +27,21 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 		this.setPathfindingMalus(this, BlockPath.WATER, 0.0F);
 		this.setPathfindingMalus(this, BlockPath.OPEN, -1.0F);
 	}
-
-
-	@Override
-	public String getLivingSound() {
-		return null;
-	}
-
-	@Override
+    @Override
 	protected String getHurtSound() {
 		return null;
 	}
-
 	@Override
 	protected String getDeathSound() {
 		return null;
 	}
-
 	protected boolean canDespawn() {
 		return true;
 	}
-
 	@Override
 	public boolean canMoveDirect() {
 		return true;
 	}
-
-
 	@Override
 	public void onLivingUpdate() {
 		if (this.isInWater()) {
@@ -115,9 +103,11 @@ public abstract class EntityBaseFish extends EntityWaterAnimal implements IPathG
 				double y1 = coordsForNextPath.yCoord - this.y;
 				float f2 = (float) (Math.atan2(z1, x1) * 180.0 / 3.1415927410125732) - 90.0f;
 				this.moveForward = this.moveSpeed;
-				for (f3 = f2 - this.yRot; f3 < -180.0f; f3 += 360.0f) {
-				}
-				while (f3 >= 180.0f) {
+                f3 = f2 - this.yRot;
+                while (f3 < -180.0f) {
+                    f3 += 360.0f;
+                }
+                while (f3 >= 180.0f) {
 					f3 -= 360.0f;
 				}
 				if (f3 > 30.0f) {

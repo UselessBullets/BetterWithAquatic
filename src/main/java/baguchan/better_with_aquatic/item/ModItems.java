@@ -9,7 +9,6 @@ import turniplabs.halplibe.helper.ItemHelper;
 public class ModItems {
 	public static final Item small_bulb = ItemHelper.createItem(BetterWithAquatic.MOD_ID, new Item("small_bulb", IDUtils.getCurrItemId()).withTags(ItemTags.renderFullbright), "small_bulb", "small_bulb.png");
 
-
 	public static void onInitialize() {
 	}
 }

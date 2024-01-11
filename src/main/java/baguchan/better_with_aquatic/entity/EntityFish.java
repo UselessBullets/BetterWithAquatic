@@ -9,7 +9,6 @@ public class EntityFish extends EntityBaseFish {
 		super(world);
 		this.setSize(0.45F, 0.45F);
 		this.setPos(this.x, this.y, this.z);
-
 		this.skinName = "fish";
 	}
 

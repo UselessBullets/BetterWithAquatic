@@ -10,7 +10,6 @@ import java.util.Random;
 public class WorldFeatureCoral extends WorldFeature {
 	public WorldFeatureCoral() {
 	}
-
 	@Override
 	public boolean generate(World world, Random random, int x, int y, int z) {
 		if (world.getBlockId(x, y - 1, z) != Block.fluidWaterStill.id) {
@@ -33,7 +32,6 @@ public class WorldFeatureCoral extends WorldFeature {
 		}
 		return false;
 	}
-
 	private void generateCoralGroup(World world, Random random, int x, int y, int z, int id) {
 		for (int l = 0; l < 12; ++l) {
 			int i1 = x + random.nextInt(3) - random.nextInt(3);

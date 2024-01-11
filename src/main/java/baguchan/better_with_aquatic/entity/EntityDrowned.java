@@ -54,11 +54,7 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 				this.setPathFinder(this, this.betterPathFinder);
 			}
 		}
-		if (this.isInWater()) {
-			setSwimming(true);
-		} else {
-			setSwimming(false);
-		}
+        setSwimming(this.isInWater());
 		this.updateSwimAmount();
 	}
 
@@ -145,9 +141,11 @@ public class EntityDrowned extends EntityZombie implements IPathGetter, ISwiming
 				double y1 = coordsForNextPath.yCoord - this.y;
 				float f2 = (float) (Math.atan2(z1, x1) * 180.0 / 3.1415927410125732) - 90.0f;
 				this.moveForward = this.moveSpeed * 0.15F;
-				for (f3 = f2 - this.yRot; f3 < -180.0f; f3 += 360.0f) {
-				}
-				while (f3 >= 180.0f) {
+                f3 = f2 - this.yRot;
+                while (f3 < -180.0f) {
+                    f3 += 360.0f;
+                }
+                while (f3 >= 180.0f) {
 					f3 -= 360.0f;
 				}
 				if (f3 > 30.0f) {

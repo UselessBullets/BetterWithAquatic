@@ -10,6 +10,7 @@ import net.minecraft.core.entity.Entity;
 import net.minecraft.core.util.helper.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -26,7 +27,7 @@ public class ModelPlayerMixin extends ModelBiped implements ISwimModel {
 	public Cube bipedRightLegOverlay;
 	@Shadow
 	public Cube bipedBodyOverlay;
-
+	@Unique
 	private Entity entity;
 
 	@Inject(method = "setRotationAngles", at = @At("TAIL"))
@@ -80,8 +81,7 @@ public class ModelPlayerMixin extends ModelBiped implements ISwimModel {
 		ModelPlayer.func_178685_a(this.bipedRightArm, this.bipedRightArmOverlay);
 		ModelPlayer.func_178685_a(this.bipedBody, this.bipedBodyOverlay);
 	}
-
-
+	@Unique
 	protected float rotlerpRad(float p_102836_, float p_102837_, float p_102838_) {
 		float f = (p_102838_ - p_102837_) % (float) (Math.PI * 2);
 		if (f < (float) -Math.PI) {
@@ -94,13 +94,10 @@ public class ModelPlayerMixin extends ModelBiped implements ISwimModel {
 
 		return p_102837_ + p_102836_ * f;
 	}
-
-
+	@Unique
 	private float quadraticArmUpdate(float p_102834_) {
 		return -65.0F * p_102834_ + p_102834_ * p_102834_;
 	}
-
-
 	@Override
 	public Entity getEntity() {
 		return entity;

@@ -5,9 +5,7 @@ import net.minecraft.core.util.helper.MathHelper;
 import useless.dragonfly.model.entity.BenchEntityModel;
 
 public class DrownedModel extends BenchEntityModel {
-
 	private static EntityDrowned drowned;
-
 	@Override
 	public void setLivingAnimations(EntityLiving entityliving, float limbSwing, float limbYaw, float renderPartialTicks) {
 		super.setLivingAnimations(entityliving, limbSwing, limbYaw, renderPartialTicks);
@@ -15,7 +13,6 @@ public class DrownedModel extends BenchEntityModel {
 			drowned = (EntityDrowned) entityliving;
 		}
 	}
-
 	@Override
 	public void setRotationAngles(float limbSwing, float limbYaw, float ticksExisted, float headYaw, float headPitch, float scale) {
 		this.getIndexBones().forEach((s, benchEntityBones) -> {
